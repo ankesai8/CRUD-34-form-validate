@@ -199,7 +199,6 @@ function App(){
 
              {/* INPUT-5 ELEMENT WITH onChange function */}
         <input  type = "text" value = {city} name ="city" placeholder = "Enter your City"
-
          onChange={
            (event)=>{
              setCity(event.target.value)
@@ -210,7 +209,7 @@ function App(){
             }
             }} required style = {{marginRight:"40px"}}>
 
-         </input>
+        City: </input>
          <span className="err">{cityErr}</span>
 
         <button  className="btn btn-success btns" type="submit">Submit</button>
