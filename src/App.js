@@ -21,9 +21,6 @@ function App(){
   const [ phoneErr , setPhoneErr] = React.useState("")
   const [ cityErr , setCityErr] = React.useState("")
 
-  
-
-
 //CALLED ONLY ONCE WHENEVER PAGE IS REFRESHED TO GET INITIAL DATA
   React.useEffect(()=>{
     async function getData(){
@@ -33,7 +30,7 @@ function App(){
     getData()
   },[])
 
-// USED TO PERFORM DELETE METHOD
+// DELETE METHOD
   async function deleteId(id){ 
       await axios.delete("https://jsonplaceholder.typicode.com/users/" + id)
       let datas = [...data]
@@ -41,7 +38,7 @@ function App(){
       setData(newData)
   }
 
-// USED TO PERFORM POST METHOD
+// POST METHOD
   async function createData(){
     const response3 = await axios.post("https://jsonplaceholder.typicode.com/users",{
       name : fullName,
@@ -56,7 +53,7 @@ function App(){
     resetData()
   }
 
-// USED TO PERFORM PUT METHOD
+//PUT METHOD
   async function editData(){
     const response4 = await axios.put("https://jsonplaceholder.typicode.com/users/" + id ,{
       name : fullName,
@@ -82,24 +79,11 @@ function App(){
 
 // checks whether to create new data or edit the present data
 
-    if(id !== ""){
-
-      editData()
-
-    }else{
-// checks for error if any
-
-      if(a.length===0 && b.length===0){
-
-        createData()
-
-      }else{
-
-        return
-
-      }
-     
-    }
+    if(id !== ""){editData()}
+    else{// checks for error if any
+           if(a.length===0 && b.length===0){ createData()}
+             else{return}   
+              }
   }
 
   // TO GET THE FORM FILLED WITH THE VALUES SELECTED TO  UPDATE
