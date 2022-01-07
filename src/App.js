@@ -111,7 +111,7 @@ function App(){
     <>
     {/* CODE FOR THE BANNER */}
     <div className="banner">
-      <p className="title">CRUD Contacts with validation</p>
+      <p className="title">CRUD Validation</p>
     </div>
 
     {/* FORM ELEMENTS */}
